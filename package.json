@@ -1,0 +1,30 @@
+{
+  "name": "ooportfolio",
+  "version": "1.0.0",
+  "description": "a package for ooportfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "./bin/build-css",
+    "watch-css": "./bin/watch-css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunNorth/ooportfolio.git"
+  },
+  "keywords": [
+    "web",
+    "design",
+    "webdesign"
+  ],
+  "author": "OOrlova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SunNorth/ooportfolio/issues"
+  },
+  "homepage": "https://github.com/SunNorth/ooportfolio#readme",
+  "devDependencies": {
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9"
+  }
+}
