@@ -1,0 +1,192 @@
+.main-container {
+  display: grid;
+  grid-template-rows: 85vh auto auto 4em;
+  grid-template-columns: 1fr 8fr 6fr 1fr;
+  grid-template-areas:
+    "header header hero hero"
+    ". main main ."
+    ". contact contact ."
+    "footer footer footer footer";
+
+  .header {
+    grid-area: header;
+    background-color: green;
+
+    display: grid;
+    grid-template-rows: 4em auto 30%;
+    grid-template-columns: 1fr 4fr 2fr;
+    grid-template-areas: "navbar navbar navbar"
+      ". title title"
+      "subtitle subtitle .";
+
+    nav {
+      grid-area: navbar;
+      background-color: gray;
+    }
+
+    .header-title {
+      grid-area: title;
+      align-self: center;
+      background-color: yellow;
+    }
+
+    #header-sub-title {
+      grid-area: subtitle;
+      background-color: hotpink;
+    }
+  }
+
+  .hero {
+    grid-area: hero;
+    background-color: red;
+
+    display: grid;
+    grid-template-rows: 4em auto;
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas: ". subnavbar"
+      "img img";
+
+    .hero-navbar {
+      grid-area: subnavbar;
+      background-color: aqua;
+    }
+
+    #hero-img {
+      grid-area: img;
+      background-color: beige;
+    }
+  }
+
+  // ========== Grid MAIN ==============
+  .main {
+    grid-area: main;
+    background-color: yellow;
+
+    .main-title {
+      text-align: center;
+      margin-bottom: 4rem !important;
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-gap: 15px;
+
+
+      .portfolio-img {
+        // background-color: purple;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.small {
+          grid-row: span 1;
+          grid-column: span 1;
+        }
+
+        &.large {
+          grid-row: span 2;
+          grid-column: span 2;
+        }
+      }
+    }
+  }
+
+  // ========== Grid CONTACT ==============
+
+  .contact {
+    grid-area: contact;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+
+    form {
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(2 1fr);
+      grid-template-rows: repeat(3 1fr);
+      grid-template-areas:
+        "name email"
+        "message message"
+        "send send";
+
+      div {
+        padding: 10px;
+      }
+
+      div:first-child {
+        grid-area: name;
+      }
+
+      div:nth-child(2) {
+        grid-area: email;
+      }
+
+      div:nth-child(3) {
+        grid-area: message;
+      }
+
+      div:last-child {
+        grid-area: send;
+        margin: 0 auto;
+
+        span {
+          text-align: center;
+          padding: 15px;
+          background-color: $blue;
+          border: none;
+          border-radius: 100px;
+        }
+      }
+
+      label {
+        position: relative;
+        top: -30px;
+
+        &#email {
+          &::after {
+            content: 'i will reply ASAP';
+            padding-left: 1.2rem;
+            font-size: 0.8rem;
+            opacity: 0.8;
+          }
+        }
+      }
+
+      input[type="email"]+label {
+        content: 'hello';
+      }
+
+      & input {
+        padding: 10px 10px 5px;
+        border: none;
+        border-bottom: 1px solid $primary-dark;
+        background-color: transparent;
+        width: 100%;
+
+        //webkit
+        &::placeholder {
+          color: $primary-dark;
+
+          &:after {
+            content: 'hi';
+          }
+        }
+      }
+
+      input[type="email"]::placeholder {
+        color: red;
+
+        &::after {
+          content: 'hi';
+        }
+      }
+    }
+  }
+
+  footer {
+    grid-area: footer;
+    background-color: lightblue;
+  }
+}

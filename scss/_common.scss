@@ -1,0 +1,38 @@
+// ========= Titles ============
+h2 {
+  text-align: center !important;
+  margin-bottom: 2rem !important;
+}
+
+
+// ============ Style Hero section ==================
+
+.hero {
+
+  #hero-img {
+    position: relative;
+
+    img#portrait {
+      width: 70%;
+      height: auto;
+      position: absolute;
+      bottom: 0;
+      left: -8%;
+    }
+  }
+}
+
+// ============ Style MAIN ============
+.main {
+
+  .portfolio-img {
+
+    img {
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+}
+
+// ============ Style CONTACT ============
+
