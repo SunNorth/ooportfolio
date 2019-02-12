@@ -11,17 +11,14 @@
 
   .header {
     grid-area: header;
-    background-color: green;
-
     display: grid;
-    grid-template-rows: 4em auto;
+    grid-template-rows: 4rem auto;
     grid-template-columns: 1fr 4fr 2fr;
     grid-template-areas: "navbar navbar navbar"
       ". title title";
 
     nav {
       grid-area: navbar;
-      background-color: gray;
     }
 
     .header-title {
