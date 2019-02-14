@@ -6,8 +6,25 @@ h2 {
 
 
 // ============ Style HEADER =================
-.bg-navbar {
-  background-color: $graphite !important;
+// .bg-navbar {
+//   background-color: $graphite !important;
+// }
+
+.navbar {
+
+  padding: 0 !important;
+
+  .navbar-dark .bg-dark {
+    background-color: $graphite !important;
+  }
+
+  .navbar-collapse .collapse {
+    background-color: $graphite;
+    min-width: 100%;
+    padding: 0.5rem 1rem;
+  }
+
+
 }
 
 // ============ Style Hero section ============
