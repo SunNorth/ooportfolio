@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 /*! -----------------------
 
 Copied bootstrap.scss goes first. 
@@ -20,14 +21,14 @@ After there is Custom
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-@import "../bootstrap/scss/functions";
-@import "../bootstrap/scss/variables";
-@import "../bootstrap/scss/mixins";
-@import "../bootstrap/scss/root";
-@import "../bootstrap/scss/reboot";
-@import "../bootstrap/scss/type";
-@import "../bootstrap/scss/images";
-@import "../bootstrap/scss/code";
+// @import "../bootstrap/scss/functions";
+// @import "../bootstrap/scss/variables";
+// @import "../bootstrap/scss/mixins";
+// @import "../bootstrap/scss/root";
+// @import "../bootstrap/scss/reboot";
+// @import "../bootstrap/scss/type";
+// @import "../bootstrap/scss/images";
+// @import "../bootstrap/scss/code";
 //  @import "../bootstrap/scss/grid";
 //  @import "../bootstrap/scss/tables";
 //  @import "../bootstrap/scss/forms";
@@ -37,8 +38,8 @@ After there is Custom
 //  @import "../bootstrap/scss/button-group";
 //  @import "../bootstrap/scss/input-group";
 //  @import "../bootstrap/scss/custom-forms";
-@import "../bootstrap/scss/nav";
-@import "../bootstrap/scss/navbar";
+// @import "../bootstrap/scss/nav";
+// @import "../bootstrap/scss/navbar";
 //  @import "../bootstrap/scss/card";
 //  @import "../bootstrap/scss/breadcrumb";
 //  @import "../bootstrap/scss/pagination";
@@ -61,7 +62,8 @@ After there is Custom
 // ================= Custom =============== //
 
 @import "variables";
-@import "grid";
+@import "mixins";
 @import "common";
+@import "grid";
+@import "navbar";
 @import "hamburgers";
-

@@ -1,2 +1,159 @@
 // Styling navbar menu 
 
+header.reboot {
+  background: var(--background-menu);
+  text-align: center;
+  position: fixed;
+  width: 54%;
+  /*  transform: translateX(-50%);
+  check the link https://stackoverflow.com/questions/6794000/fixed-position-but-relative-to-container */
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    @include font-light-white($white, 300);
+    border-left: 3px solid transparent;
+    transform: (0, 1);
+
+    &:hover {
+      color: $grey-100;
+      text-decoration: none;
+      border-left: 3px solid white;
+
+    }
+  }
+
+  nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background-menu);
+    width: 100%;
+    // display: none;
+    transform: scale(1, 0);
+    transition: transform 200ms ease;
+    transform-origin: top;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: 1.5rem;
+
+        a {
+          padding-left: 1rem;
+          opacity: 0;
+          transition: opacity 200ms ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+.nav-toggle {
+  display: none;
+
+  &:checked~nav {
+    // display: block;
+    transform: scale(1, 1);
+
+    & a {
+      opacity: 1;
+      transition: opacity 200ms ease-in-out 100ms;
+    }
+  }
+}
+
+.nav-toggle-label {
+  margin-right: 2rem;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+
+  span,
+  span::before,
+  span::after {
+    width: 2rem;
+    display: block;
+    background: white;
+    height: 3px;
+    border-radius: 4px;
+    position: relative;
+  }
+
+  span::before,
+  span::after {
+    content: '';
+    position: absolute;
+  }
+
+  span::before {
+    bottom: 8px;
+  }
+
+  span::after {
+    top: 8px;
+  }
+}
+
+@media screen and (min-width:992px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header.reboot {
+    flex-flow: row;
+
+    nav {
+      all: unset;
+      display: flex;
+
+      ul {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+
+        li {
+          margin-bottom: 0;
+
+          a {
+            padding-left: 0;
+            margin-left: 2rem;
+            opacity: 1;
+            position: relative;
+            border-left: none;
+
+            &::before {
+              content: '';
+              display: block;
+              height: 3px;
+              background: $white;
+              position: absolute;
+              top: -1.1em;
+              left: 0;
+              right: 0;
+              transform: scale(0, 1);
+              transition: transform ease-in-out 100ms;
+              transform-origin: left;
+
+            }
+
+            &:hover {
+              border-left: none;
+
+              &::before {
+                transform: scale(1, 1);
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+  }
+}

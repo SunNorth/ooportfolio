@@ -1,13 +1,17 @@
 // Color scheme
+$white : white;
+$blue: #5B819C;
+$coral: #F19A98;
+$red: #CE0D34;
+$greenish: #169AA0;
+$graphite: #062733;
+$grey-100: #e1e1e1;
+$primary-dark: #062733;
 
-$pink: #F7C2D4;
-$light-pink: #F9D9E1;
-$custom-bg-grey: #F6F6F6;
-$red: #C41D1F;
-$blue: #87CEEB;
-$light-blue: #9EE2FD;
-$graphite: #1F1F1F;
-$primary-dark: #090A0B;
+$font-primary: 'Roboto',
+sans-serif;
+
+$font-color-menu: $white;
 
 // ===================== Overrides Bootstrap ========================= //
 // Variables

@@ -1,6 +1,6 @@
 .main-container {
   display: grid;
-  grid-template-rows: 35vh auto auto auto 4em;
+  grid-template-rows: 50vh auto auto auto 4em;
   grid-template-columns: 2fr 3fr 8fr 6fr 3fr 2fr;
   grid-template-areas:
     "header header header hero hero hero"

@@ -1,0 +1,6 @@
+@mixin font-light-white($font-color-menu, $font-weight) {
+  font-weight: $font-weight;
+  color: $font-color-menu;
+  text-decoration: none;
+  text-transform: uppercase;
+}

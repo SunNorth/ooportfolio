@@ -1,8 +1,41 @@
-// ============ Titles ============
-h2 {
-  text-align: center !important;
-  margin-bottom: 2rem !important;
+// ============ General style ============
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500');
+
+:root {
+  --background-menu: rgba(31, 31, 31, 0.9);
 }
+
+html {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: $font-primary;
+    color: $primary-dark;
+
+    .logo {
+      width: 25px;
+      height: auto;
+      margin: 1rem 2rem;
+    }
+
+    // ============ Titles ============
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+
+
+
+
+
+
 
 
 // ============ Style HEADER =================
@@ -10,22 +43,22 @@ h2 {
 //   background-color: $graphite !important;
 // }
 
-.navbar {
+// .navbar {
 
-  padding: 0 !important;
+//   padding: 0 !important;
 
-  .navbar-dark .bg-dark {
-    background-color: $graphite !important;
-  }
+//   .navbar-dark .bg-dark {
+//     background-color: $graphite !important;
+//   }
 
-  .navbar-collapse .collapse {
-    background-color: $graphite;
-    min-width: 100%;
-    padding: 0.5rem 1rem;
-  }
+//   .navbar-collapse .collapse {
+//     background-color: $graphite;
+//     min-width: 100%;
+//     padding: 0.5rem 1rem;
+//   }
 
 
-}
+// }
 
 // ============ Style Hero section ============
 
