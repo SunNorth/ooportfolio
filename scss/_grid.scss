@@ -1,7 +1,8 @@
 .main-container {
   display: grid;
   grid-template-rows: 50vh auto auto auto 4em;
-  grid-template-columns: 2fr 3fr 8fr 6fr 3fr 2fr;
+  // grid-template-columns: 2fr 3fr 8fr 6fr 3fr 2fr;
+  grid-template-columns: 7% 13% 34% 26% 13% 7%;
   grid-template-areas:
     "header header header hero hero hero"
     ". . intro intro . ."
@@ -33,11 +34,11 @@
   grid-area: hero;
   background-color: red;
 
-  display: grid;
-  grid-template-rows: 3rem auto;
-  grid-template-columns: 3fr 2fr;
-  grid-template-areas: ". subnavbar"
-    "herobg herobg";
+  // display: grid;
+  // grid-template-rows: 3rem auto;
+  // grid-template-columns: 3fr 2fr;
+  // grid-template-areas: ". subnavbar"
+  //   "herobg herobg";
 
   .hero-navbar {
     grid-area: subnavbar;

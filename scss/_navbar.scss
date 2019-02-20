@@ -11,6 +11,10 @@ header.reboot {
   display: flex;
   justify-content: space-between;
 
+  .logo {
+    border-left: none;
+  }
+
   a {
     @include font-light-white($white, 300);
     border-left: 3px solid transparent;
@@ -20,7 +24,10 @@ header.reboot {
       color: $grey-100;
       text-decoration: none;
       border-left: 3px solid white;
+    }
 
+    &:first-child {
+      border: none; // logo link
     }
   }
 
@@ -29,7 +36,7 @@ header.reboot {
     text-align: left;
     top: 100%;
     left: 0;
-    background: var(--background-menu);
+    // background: var(--background-menu);
     width: 100%;
     // display: none;
     transform: scale(1, 0);
