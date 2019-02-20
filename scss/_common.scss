@@ -31,11 +31,17 @@ html {
     // ============ HERO section ============
 
     .hero-navbar {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 1rem;
+
       a {
         img {
           height: 25px;
           width: auto;
-          margin: 0;
+          margin-left: 0;
+          margin-right: 1rem;
+
         }
       }
     }
