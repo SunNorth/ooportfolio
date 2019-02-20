@@ -33,28 +33,19 @@ html {
     .hero-navbar {
       display: flex;
       justify-content: flex-end;
-      padding-right: 1rem;
 
       a {
         img {
-          height: 25px;
+          height: 21px;
           width: auto;
           margin-left: 0;
-          margin-right: 1rem;
-
+          margin-top: 1.125rem;
+          margin-bottom: 1.125rem;
         }
       }
     }
   }
 }
-
-
-
-
-
-
-
-
 
 // ============ Style HEADER =================
 // .bg-navbar {
