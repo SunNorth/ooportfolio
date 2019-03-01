@@ -1,9 +1,9 @@
 // ============ General style ============
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,300,300i,400,400i,500');
 
 :root {
-  --background-menu: rgba(31, 31, 31, 0.9);
+  --background-menu: rgba(49, 78, 89, 1);
 }
 
 html {
@@ -15,6 +15,8 @@ html {
   body {
     font-family: $font-primary;
     color: $primary-dark;
+    font-size: $font-primary-size;
+    font-weight: 200;
 
     .logo {
       height: 25px;
@@ -27,6 +29,38 @@ html {
       text-align: center;
       margin-bottom: 2rem;
     }
+
+    // ============ Buttons ============
+    a.button {
+      padding: 1rem 2rem;
+      margin-top: 2rem;
+      text-align: center;
+      display: inline-block;
+      text-decoration: none;
+      color: $font-color-primary;
+      border-radius: 6.25rem;
+      font-weight: inherit;
+
+      &.button-primary {
+        background-color: $blue;
+        color: $white;
+      }
+
+      &.button-secondary {
+        background-color: $greenish;
+        color: $white;
+      }
+
+      &:hover,
+      :focus {
+        filter: grayscale(50%);
+        font-size: 1.01rem;
+        padding: 0.99rem 2rem;
+        transition: font-size 100ms ease-in-out;
+      }
+
+    }
+
 
     // ============ HERO section ============
 
@@ -42,6 +76,26 @@ html {
           margin-top: 1.125rem;
           margin-bottom: 1.125rem;
         }
+      }
+    }
+
+    .bg-striped {
+      background: linear-gradient(to bottom,
+        $light-graphite,
+        $light-graphite 50%,
+        $white 50%,
+        $white);
+      background-size: 100% 20px;
+    }
+
+    // ============ WORK section ============
+    .main {
+      text-align: center;
+
+      .work-menu {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
       }
     }
   }

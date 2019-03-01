@@ -5,13 +5,18 @@ $coral: #F19A98;
 $red: #CE0D34;
 $greenish: #169AA0;
 $graphite: #062733;
+$light-graphite: rgb(49, 78, 89);
 $grey-100: #e1e1e1;
-$primary-dark: #062733;
+$primary-dark: $graphite;
+
+
 
 $font-primary: 'Roboto',
 sans-serif;
+$font-primary-size: 16px;
 
 $font-color-menu: $white;
+$font-color-primary: $primary-dark;
 
 // ===================== Overrides Bootstrap ========================= //
 // Variables

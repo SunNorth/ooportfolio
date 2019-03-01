@@ -9,6 +9,7 @@
     ". main main main main ."
     ". . contact contact . ."
     "footer footer footer footer footer footer";
+  // grid-template: "header header header hero hero hero"50vh / 100% ". . intro intro . ."auto / 60% ". main main main main ."auto / 86% ". . contact contact . ."auto / 60% "footer footer footer footer footer footer"4em / 100%;
 
   .header {
     grid-area: header;
@@ -32,17 +33,25 @@
 
 .hero {
   grid-area: hero;
-  background-color: red;
-
-  // display: grid;
-  // grid-template-rows: 3rem auto;
-  // grid-template-columns: 3fr 2fr;
-  // grid-template-areas: ". subnavbar"
-  //   "herobg herobg";
+  display: grid;
+  grid-template-rows: 57px auto;
+  grid-template-areas:
+    "subnavbar subnavbar subnavbar subnavbar"
+    "stripes stripes stripes stripes";
 
   .hero-navbar {
     grid-area: subnavbar;
-    background-color: aqua;
+    background-color: $white;
+  }
+
+  .striped {
+    grid-area: stripes;
+    background: linear-gradient(to bottom,
+      $light-graphite,
+      $light-graphite 50%,
+      $white 50%,
+      $white);
+    background-size: 100% 20px;
   }
 }
 
@@ -71,7 +80,12 @@
 
   #hero-stripes {
     grid-column-start: 2;
-    background-color: antiquewhite;
+    background: linear-gradient(to bottom,
+      $light-graphite,
+      $light-graphite 50%,
+      $white 50%,
+      $white);
+    background-size: 100% 20px;
   }
 }
 
@@ -82,7 +96,7 @@
 
   .main-title {
     text-align: center;
-    margin-bottom: 4rem !important;
+    margin-bottom: 2rem;
   }
 
   .portfolio {
