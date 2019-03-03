@@ -21,6 +21,7 @@ header.reboot {
     transform: (0, 1);
 
     &:hover {
+      cursor: pointer;
       color: $grey-100;
       text-decoration: none;
       border-left: 3px solid white;
@@ -40,7 +41,7 @@ header.reboot {
     width: 100%;
     // display: none;
     transform: scale(1, 0);
-    transition: transform 200ms ease;
+    transition: transform 100ms ease;
     transform-origin: top;
 
     ul {
@@ -54,7 +55,7 @@ header.reboot {
         a {
           padding-left: 1rem;
           opacity: 0;
-          transition: opacity 200ms ease-in-out;
+          transition: opacity 100ms ease-in-out;
         }
       }
     }
@@ -70,7 +71,7 @@ header.reboot {
 
     & a {
       opacity: 1;
-      transition: opacity 200ms ease-in-out 100ms;
+      transition: opacity 100ms ease-in-out 50ms;
     }
   }
 }
@@ -80,6 +81,7 @@ header.reboot {
   margin-bottom: 0;
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   span,
   span::before,
@@ -146,7 +148,6 @@ header.reboot {
               transform: scale(0, 1);
               transition: transform ease-in-out 100ms;
               transform-origin: left;
-
             }
 
             &:hover {

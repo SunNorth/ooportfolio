@@ -10,6 +10,8 @@ html {
   * {
     margin: 0;
     padding: 0;
+
+    font-size: 2vw;
   }
 
   body {
@@ -25,9 +27,30 @@ html {
     }
 
     // ============ Titles ============
+
+    p,
+    a {
+      font-size: calc(16px + (20 - 16) * (100vw - 400px) / (1800 - 400));
+      /* where 16px = min font-size,
+       24-16 = max font size - min font size,
+       400px = min screen size,
+       800 - 400 = max screen size - min screen size;
+      */
+    }
+
+    h1 {
+      font-size: 2.3em;
+      font-size: calc(16px + (36 - 16) * (100vw - 400px) / (1800 - 400));
+    }
+
     h2 {
+      font-size: 2em;
       text-align: center;
       margin-bottom: 2rem;
+
+      @include mq(768px) {
+        font-size: 1.6rem;
+      }
     }
 
     // ============ Buttons ============

@@ -1,15 +1,15 @@
 .main-container {
   display: grid;
-  grid-template-rows: 50vh auto auto auto 4em;
-  // grid-template-columns: 2fr 3fr 8fr 6fr 3fr 2fr;
-  grid-template-columns: 7% 13% 34% 26% 13% 7%;
-  grid-template-areas:
-    "header header header hero hero hero"
-    ". . intro intro . ."
-    ". main main main main ."
-    ". . contact contact . ."
-    "footer footer footer footer footer footer";
-  // grid-template: "header header header hero hero hero"50vh / 100% ". . intro intro . ."auto / 60% ". main main main main ."auto / 86% ". . contact contact . ."auto / 60% "footer footer footer footer footer footer"4em / 100%;
+  // grid-template-rows: 50vh auto auto auto 4em;
+  // // grid-template-columns: 2fr 3fr 8fr 6fr 3fr 2fr;
+  // grid-template-columns: 7% 13% 34% 26% 13% 7%;
+  // grid-template-areas:
+  //   "header header header hero hero hero"
+  //   ". . intro intro . ."
+  //   ". main main main main ."
+  //   ". . contact contact . ."
+  //   "footer footer footer footer footer footer";
+  grid-template: "header header header hero hero hero"50vh ". . intro intro . ."auto ". main main main main ."auto ". . contact contact . ."auto "footer footer footer footer footer footer"4em / 7% 13% 34% 26% 13% 7%;
 
   .header {
     grid-area: header;
@@ -26,6 +26,7 @@
         bottom: 0;
         right: 0;
         width: 70%;
+        margin: 1rem 2rem 0;
       }
     }
   }
@@ -34,10 +35,12 @@
 .hero {
   grid-area: hero;
   display: grid;
-  grid-template-rows: 57px auto;
-  grid-template-areas:
-    "subnavbar subnavbar subnavbar subnavbar"
-    "stripes stripes stripes stripes";
+  // grid-template-rows: 57px auto;
+  // grid-template-areas:
+  //   "subnavbar subnavbar subnavbar subnavbar"
+  //   "stripes stripes stripes stripes";
+  // we can use shortcut 'grid-template'
+  grid-template: "subnavbar subnavbar subnavbar subnavbar"57px "stripes stripes stripes stripes"auto;
 
   .hero-navbar {
     grid-area: subnavbar;

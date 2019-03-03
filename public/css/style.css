@@ -18,7 +18,8 @@ After there is Custom
 
 html * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-size: 2vw; }
 
 html body {
   font-family: "Roboto", sans-serif;
@@ -29,9 +30,24 @@ html body {
     height: 25px;
     width: auto;
     margin: 1rem 2rem; }
+  html body p,
+  html body a {
+    font-size: calc(16px + (20 - 16) * (100vw - 400px) / (1800 - 400));
+    /* where 16px = min font-size,
+       24-16 = max font size - min font size,
+       400px = min screen size,
+       800 - 400 = max screen size - min screen size;
+      */ }
+  html body h1 {
+    font-size: 2.3em;
+    font-size: calc(16px + (36 - 16) * (100vw - 400px) / (1800 - 400)); }
   html body h2 {
+    font-size: 2em;
     text-align: center;
     margin-bottom: 2rem; }
+    @media only screen and (max-width: 768px) {
+      html body h2 {
+        font-size: 1.6rem; } }
   html body a.button {
     padding: 1rem 2rem;
     margin-top: 2rem;
@@ -78,9 +94,7 @@ html body {
 
 .main-container {
   display: grid;
-  grid-template-rows: 50vh auto auto auto 4em;
-  grid-template-columns: 7% 13% 34% 26% 13% 7%;
-  grid-template-areas: "header header header hero hero hero" ". . intro intro . ." ". main main main main ." ". . contact contact . ." "footer footer footer footer footer footer"; }
+  grid-template: "header header header hero hero hero" 50vh ". . intro intro . ." auto ". main main main main ." auto ". . contact contact . ." auto "footer footer footer footer footer footer" 4em/7% 13% 34% 26% 13% 7%; }
   .main-container .header {
     grid-area: header;
     display: flex;
@@ -93,13 +107,13 @@ html body {
         position: absolute;
         bottom: 0;
         right: 0;
-        width: 70%; }
+        width: 70%;
+        margin: 1rem 2rem 0; }
 
 .hero {
   grid-area: hero;
   display: grid;
-  grid-template-rows: 57px auto;
-  grid-template-areas: "subnavbar subnavbar subnavbar subnavbar" "stripes stripes stripes stripes"; }
+  grid-template: "subnavbar subnavbar subnavbar subnavbar" 57px "stripes stripes stripes stripes" auto; }
   .hero .hero-navbar {
     grid-area: subnavbar;
     background-color: white; }
@@ -230,6 +244,7 @@ header.reboot {
     border-left: 3px solid transparent;
     transform: 0, 1; }
     header.reboot a:hover {
+      cursor: pointer;
       color: #e1e1e1;
       text-decoration: none;
       border-left: 3px solid white; }
@@ -243,7 +258,7 @@ header.reboot {
     background: var(--background-menu);
     width: 100%;
     transform: scale(1, 0);
-    transition: transform 200ms ease;
+    transition: transform 100ms ease;
     transform-origin: top; }
     header.reboot nav ul {
       margin: 0;
@@ -254,7 +269,7 @@ header.reboot {
         header.reboot nav ul li a {
           padding-left: 1rem;
           opacity: 0;
-          transition: opacity 200ms ease-in-out; }
+          transition: opacity 100ms ease-in-out; }
 
 .nav-toggle {
   display: none; }
@@ -262,13 +277,14 @@ header.reboot {
     transform: scale(1, 1); }
     .nav-toggle:checked ~ nav a {
       opacity: 1;
-      transition: opacity 200ms ease-in-out 100ms; }
+      transition: opacity 100ms ease-in-out 50ms; }
 
 .nav-toggle-label {
   margin-right: 2rem;
   margin-bottom: 0;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  cursor: pointer; }
   .nav-toggle-label span,
   .nav-toggle-label span::before,
   .nav-toggle-label span::after {
