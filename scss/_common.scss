@@ -10,7 +10,6 @@ html {
   * {
     margin: 0;
     padding: 0;
-
     font-size: 2vw;
   }
 
@@ -29,8 +28,9 @@ html {
     // ============ Titles ============
 
     p,
-    a {
-      font-size: calc(16px + (20 - 16) * (100vw - 400px) / (1800 - 400));
+    a,
+    span {
+      font-size: calc(16px + (18 - 16) * (100vw - 768px) / (1800 - 768));
       /* where 16px = min font-size,
        24-16 = max font size - min font size,
        400px = min screen size,
@@ -38,13 +38,18 @@ html {
       */
     }
 
+    label {
+      font-size: calc(14px + (16 - 14) * (100vw - 768px) / (1800 - 768));
+    }
+
     h1 {
       font-size: 2.3em;
-      font-size: calc(16px + (36 - 16) * (100vw - 400px) / (1800 - 400));
+      font-size: calc(30px + (36 - 30) * (100vw - 768px) / (1800 - 768));
     }
 
     h2 {
       font-size: 2em;
+      font-size: calc(26px + (32 - 26) * (100vw - 768px) / (1800 - 768));
       text-align: center;
       margin-bottom: 2rem;
 
@@ -55,13 +60,14 @@ html {
 
     // ============ Buttons ============
     a.button {
-      padding: 1rem 2rem;
+      padding: .8rem 2rem;
+      width: 9.375rem;
       margin-top: 2rem;
       text-align: center;
       display: inline-block;
       text-decoration: none;
       color: $font-color-primary;
-      border-radius: 6.25rem;
+      border-radius: 2.25rem;
       font-weight: inherit;
 
       &.button-primary {
@@ -77,13 +83,17 @@ html {
       &:hover,
       :focus {
         filter: grayscale(50%);
-        font-size: 1.01rem;
-        padding: 0.99rem 2rem;
-        transition: font-size 100ms ease-in-out;
+        transition: filter 100ms ease-in;
       }
 
     }
 
+    .icon {
+      display: inline-block;
+      width: 25px;
+      height: auto;
+      margin-left: .3rem;
+    }
 
     // ============ HERO section ============
 
@@ -125,26 +135,6 @@ html {
 }
 
 // ============ Style HEADER =================
-// .bg-navbar {
-//   background-color: $graphite !important;
-// }
-
-// .navbar {
-
-//   padding: 0 !important;
-
-//   .navbar-dark .bg-dark {
-//     background-color: $graphite !important;
-//   }
-
-//   .navbar-collapse .collapse {
-//     background-color: $graphite;
-//     min-width: 100%;
-//     padding: 0.5rem 1rem;
-//   }
-
-
-// }
 
 // ============ Style Hero section ============
 
@@ -165,3 +155,8 @@ html {
 }
 
 // ============ Style CONTACT ============
+
+// ============ Style FOOTER ============
+footer {
+  margin-top: 2rem;
+}

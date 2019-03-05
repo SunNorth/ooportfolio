@@ -10,6 +10,16 @@
   //   ". . contact contact . ."
   //   "footer footer footer footer footer footer";
   grid-template: "header header header hero hero hero"50vh ". . intro intro . ."auto ". main main main main ."auto ". . contact contact . ."auto "footer footer footer footer footer footer"4em / 7% 13% 34% 26% 13% 7%;
+  grid-row-gap: 1rem;
+
+  @include mq(768px) {
+    grid-template: "header header hero hero"30vh ". intro intro ."auto ". main main ."auto ". contact contact ."auto "footer footer footer footer"4em / 7% 47% 39% 7%;
+  }
+
+  @include mq(576px) {
+    grid-template: "header header header header"30vh "hero hero hero hero"
+      ". intro intro ."auto ". main main ."auto ". contact contact ."auto "footer footer footer footer"4em / 7% 47% 39% 7%;
+  }
 
   .header {
     grid-area: header;
@@ -17,16 +27,31 @@
     flex-flow: column;
 
     .header-title {
-      background-color: yellow;
+      background: $white;
       height: 100%;
       position: relative;
+
+      @include mq(576px) {
+        background: linear-gradient(to top,
+          $light-graphite,
+          $light-graphite 50%,
+          $white 50%,
+          $white);
+        background-size: 100% 15px;
+      }
 
       &>div {
         position: absolute;
         bottom: 0;
         right: 0;
         width: 70%;
-        margin: 1rem 2rem 0;
+        padding: 1rem 2rem 0;
+
+        @include mq(576px) {
+          width: auto;
+          padding: 2rem 2rem;
+          background-color: $white;
+        }
       }
     }
   }
@@ -42,9 +67,16 @@
   // we can use shortcut 'grid-template'
   grid-template: "subnavbar subnavbar subnavbar subnavbar"57px "stripes stripes stripes stripes"auto;
 
+  @include mq(576px) {
+    display: none;
+  }
+
+
   .hero-navbar {
     grid-area: subnavbar;
     background-color: $white;
+
+
   }
 
   .striped {
@@ -60,16 +92,20 @@
 
 #intro {
   grid-area: intro;
-  background-color: darkgoldenrod;
   display: grid;
   grid-template-columns: 2fr 2fr;
   grid-template-rows: 8fr 2fr;
-  padding-top: 8%;
+  padding-top: $padding-divide;
 
   &>div:first-of-type {
     align-self: center;
     margin: 2.5rem;
     margin-right: 0;
+    margin-bottom: 0;
+
+    @include mq(576px) {
+      margin: 0;
+    }
   }
 
   img {
@@ -79,6 +115,10 @@
     height: auto;
     place-self: center;
     margin-top: auto;
+
+    @include mq(576px) {
+      display: none;
+    }
   }
 
   #hero-stripes {
@@ -89,13 +129,27 @@
       $white 50%,
       $white);
     background-size: 100% 20px;
+
+    @include mq(576px) {
+      display: none;
+    }
+  }
+
+  @include mq(768px) {
+    grid-template-rows: 8fr 1fr;
+  }
+
+  @include mq(576px) {
+    padding-top: 0;
+    display: flex;
+
   }
 }
 
 // ========== Grid MAIN ==============
 .main {
   grid-area: main;
-  background-color: yellow;
+  padding-top: $padding-divide;
 
   .main-title {
     text-align: center;
@@ -104,15 +158,32 @@
 
   .portfolio {
     display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 15px;
+
+    @include mq(768px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-gap: 8px;
+    }
+
+    @include mq(576px) {
+      display: flex;
+      flex-direction: column;
+    }
 
 
     .portfolio-img {
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @include mq(576px) {
+        padding: 0.25rem 0.5rem;
+      }
+
 
       &.small {
         grid-row: span 1;
@@ -131,9 +202,9 @@
 
 .contact {
   grid-area: contact;
-  background-color: orange;
   display: flex;
   justify-content: center;
+  padding-top: $padding-divide;
 
   form {
     width: 80%;
@@ -144,6 +215,11 @@
       "name email"
       "message message"
       "send send";
+
+    @include mq(576px) {
+      display: flex;
+      flex-direction: column;
+    }
 
     div {
       padding: 10px;
@@ -165,13 +241,13 @@
       grid-area: send;
       margin: 0 auto;
 
-      span {
-        text-align: center;
-        padding: 15px;
-        background-color: $blue;
-        border: none;
-        border-radius: 100px;
-      }
+      // span {
+      //   text-align: center;
+      //   padding: 15px;
+      //   background-color: $blue;
+      //   border: none;
+      //   border-radius: 100px;
+      // }
     }
 
     label {
@@ -222,4 +298,5 @@
 footer {
   grid-area: footer;
   background-color: lightblue;
+  padding-top: $padding-divide;
 }

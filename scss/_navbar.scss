@@ -11,6 +11,10 @@ header.reboot {
   display: flex;
   justify-content: space-between;
 
+  @include mq(576px) {
+    width: 100%;
+  }
+
   .logo {
     border-left: none;
   }

@@ -31,31 +31,36 @@ html body {
     width: auto;
     margin: 1rem 2rem; }
   html body p,
-  html body a {
-    font-size: calc(16px + (20 - 16) * (100vw - 400px) / (1800 - 400));
+  html body a,
+  html body span {
+    font-size: calc(16px + (18 - 16) * (100vw - 768px) / (1800 - 768));
     /* where 16px = min font-size,
        24-16 = max font size - min font size,
        400px = min screen size,
        800 - 400 = max screen size - min screen size;
       */ }
+  html body label {
+    font-size: calc(14px + (16 - 14) * (100vw - 768px) / (1800 - 768)); }
   html body h1 {
     font-size: 2.3em;
-    font-size: calc(16px + (36 - 16) * (100vw - 400px) / (1800 - 400)); }
+    font-size: calc(30px + (36 - 30) * (100vw - 768px) / (1800 - 768)); }
   html body h2 {
     font-size: 2em;
+    font-size: calc(26px + (32 - 26) * (100vw - 768px) / (1800 - 768));
     text-align: center;
     margin-bottom: 2rem; }
     @media only screen and (max-width: 768px) {
       html body h2 {
         font-size: 1.6rem; } }
   html body a.button {
-    padding: 1rem 2rem;
+    padding: .8rem 2rem;
+    width: 9.375rem;
     margin-top: 2rem;
     text-align: center;
     display: inline-block;
     text-decoration: none;
     color: #062733;
-    border-radius: 6.25rem;
+    border-radius: 2.25rem;
     font-weight: inherit; }
     html body a.button.button-primary {
       background-color: #5B819C;
@@ -66,9 +71,12 @@ html body {
     html body a.button:hover,
     html body a.button :focus {
       filter: grayscale(50%);
-      font-size: 1.01rem;
-      padding: 0.99rem 2rem;
-      transition: font-size 100ms ease-in-out; }
+      transition: filter 100ms ease-in; }
+  html body .icon {
+    display: inline-block;
+    width: 25px;
+    height: auto;
+    margin-left: .3rem; }
   html body .hero-navbar {
     display: flex;
     justify-content: flex-end; }
@@ -92,28 +100,50 @@ html body {
   width: 100%;
   vertical-align: middle; }
 
+footer {
+  margin-top: 2rem; }
+
 .main-container {
   display: grid;
-  grid-template: "header header header hero hero hero" 50vh ". . intro intro . ." auto ". main main main main ." auto ". . contact contact . ." auto "footer footer footer footer footer footer" 4em/7% 13% 34% 26% 13% 7%; }
+  grid-template: "header header header hero hero hero" 50vh ". . intro intro . ." auto ". main main main main ." auto ". . contact contact . ." auto "footer footer footer footer footer footer" 4em/7% 13% 34% 26% 13% 7%;
+  grid-row-gap: 1rem; }
+  @media only screen and (max-width: 768px) {
+    .main-container {
+      grid-template: "header header hero hero" 30vh ". intro intro ." auto ". main main ." auto ". contact contact ." auto "footer footer footer footer" 4em/7% 47% 39% 7%; } }
+  @media only screen and (max-width: 576px) {
+    .main-container {
+      grid-template: "header header header header" 30vh "hero hero hero hero" ". intro intro ." auto ". main main ." auto ". contact contact ." auto "footer footer footer footer" 4em/7% 47% 39% 7%; } }
   .main-container .header {
     grid-area: header;
     display: flex;
     flex-flow: column; }
     .main-container .header .header-title {
-      background-color: yellow;
+      background: white;
       height: 100%;
       position: relative; }
+      @media only screen and (max-width: 576px) {
+        .main-container .header .header-title {
+          background: linear-gradient(to top, #314e59, #314e59 50%, white 50%, white);
+          background-size: 100% 15px; } }
       .main-container .header .header-title > div {
         position: absolute;
         bottom: 0;
         right: 0;
         width: 70%;
-        margin: 1rem 2rem 0; }
+        padding: 1rem 2rem 0; }
+        @media only screen and (max-width: 576px) {
+          .main-container .header .header-title > div {
+            width: auto;
+            padding: 2rem 2rem;
+            background-color: white; } }
 
 .hero {
   grid-area: hero;
   display: grid;
   grid-template: "subnavbar subnavbar subnavbar subnavbar" 57px "stripes stripes stripes stripes" auto; }
+  @media only screen and (max-width: 576px) {
+    .hero {
+      display: none; } }
   .hero .hero-navbar {
     grid-area: subnavbar;
     background-color: white; }
@@ -124,7 +154,6 @@ html body {
 
 #intro {
   grid-area: intro;
-  background-color: darkgoldenrod;
   display: grid;
   grid-template-columns: 2fr 2fr;
   grid-template-rows: 8fr 2fr;
@@ -132,7 +161,11 @@ html body {
   #intro > div:first-of-type {
     align-self: center;
     margin: 2.5rem;
-    margin-right: 0; }
+    margin-right: 0;
+    margin-bottom: 0; }
+    @media only screen and (max-width: 576px) {
+      #intro > div:first-of-type {
+        margin: 0; } }
   #intro img {
     display: inline-block;
     padding: 0 10%;
@@ -140,14 +173,27 @@ html body {
     height: auto;
     place-self: center;
     margin-top: auto; }
+    @media only screen and (max-width: 576px) {
+      #intro img {
+        display: none; } }
   #intro #hero-stripes {
     grid-column-start: 2;
     background: linear-gradient(to bottom, #314e59, #314e59 50%, white 50%, white);
     background-size: 100% 20px; }
+    @media only screen and (max-width: 576px) {
+      #intro #hero-stripes {
+        display: none; } }
+  @media only screen and (max-width: 768px) {
+    #intro {
+      grid-template-rows: 8fr 1fr; } }
+  @media only screen and (max-width: 576px) {
+    #intro {
+      padding-top: 0;
+      display: flex; } }
 
 .main {
   grid-area: main;
-  background-color: yellow; }
+  padding-top: 8%; }
   .main .main-title {
     text-align: center;
     margin-bottom: 2rem; }
@@ -156,10 +202,22 @@ html body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 15px; }
+    @media only screen and (max-width: 768px) {
+      .main .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 8px; } }
+    @media only screen and (max-width: 576px) {
+      .main .portfolio {
+        display: flex;
+        flex-direction: column; } }
     .main .portfolio .portfolio-img {
       display: flex;
       justify-content: center;
       align-items: center; }
+      @media only screen and (max-width: 576px) {
+        .main .portfolio .portfolio-img {
+          padding: 0.25rem 0.5rem; } }
       .main .portfolio .portfolio-img.small {
         grid-row: span 1;
         grid-column: span 1; }
@@ -169,15 +227,19 @@ html body {
 
 .contact {
   grid-area: contact;
-  background-color: orange;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  padding-top: 8%; }
   .contact form {
     width: 80%;
     display: grid;
     grid-template-columns: repeat(2 1fr);
     grid-template-rows: repeat(3 1fr);
     grid-template-areas: "name email" "message message" "send send"; }
+    @media only screen and (max-width: 576px) {
+      .contact form {
+        display: flex;
+        flex-direction: column; } }
     .contact form div {
       padding: 10px; }
     .contact form div:first-child {
@@ -189,12 +251,6 @@ html body {
     .contact form div:last-child {
       grid-area: send;
       margin: 0 auto; }
-      .contact form div:last-child span {
-        text-align: center;
-        padding: 15px;
-        background-color: #5B819C;
-        border: none;
-        border-radius: 100px; }
     .contact form label {
       position: relative;
       top: -30px; }
@@ -222,7 +278,8 @@ html body {
 
 footer {
   grid-area: footer;
-  background-color: lightblue; }
+  background-color: lightblue;
+  padding-top: 8%; }
 
 header.reboot {
   background: var(--background-menu);
@@ -234,6 +291,9 @@ header.reboot {
   z-index: 999;
   display: flex;
   justify-content: space-between; }
+  @media only screen and (max-width: 576px) {
+    header.reboot {
+      width: 100%; } }
   header.reboot .logo {
     border-left: none; }
   header.reboot a {
