@@ -9,7 +9,7 @@
   //   ". main main main main ."
   //   ". . contact contact . ."
   //   "footer footer footer footer footer footer";
-  grid-template: "header header header hero hero hero"50vh ". . intro intro . ."auto ". main main main main ."auto ". . contact contact . ."auto "footer footer footer footer footer footer"4em / 7% 13% 34% 26% 13% 7%;
+  grid-template: "header header header hero hero hero"40vh ". . intro intro . ."auto ". main main main main ."auto ". . contact contact . ."auto "footer footer footer footer footer footer"4em / 7% 13% 34% 26% 13% 7%;
   grid-row-gap: 1rem;
 
   @include mq(768px) {
@@ -116,6 +116,11 @@
     place-self: center;
     margin-top: auto;
 
+    @include mq(768px) {
+      max-width: 60%;
+      padding: 0 15%;
+    }
+
     @include mq(576px) {
       display: none;
     }
@@ -161,12 +166,12 @@
     // grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-gap: 15px;
+    grid-gap: 0.625rem;
 
     @include mq(768px) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
-      grid-gap: 8px;
+      grid-gap: 0.5rem;
     }
 
     @include mq(576px) {
@@ -275,21 +280,8 @@
       background-color: transparent;
       width: 100%;
 
-      //webkit
       &::placeholder {
         color: $primary-dark;
-
-        &:after {
-          content: 'hi';
-        }
-      }
-    }
-
-    input[type="email"]::placeholder {
-      color: red;
-
-      &::after {
-        content: 'hi';
       }
     }
   }
@@ -297,6 +289,7 @@
 
 footer {
   grid-area: footer;
-  background-color: lightblue;
+  background: var(--background-menu);
+  margin-top: 2rem;
   padding-top: $padding-divide;
 }

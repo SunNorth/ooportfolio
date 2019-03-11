@@ -39,6 +39,12 @@ html body {
        400px = min screen size,
        800 - 400 = max screen size - min screen size;
       */ }
+  html body a {
+    color: #062733;
+    text-decoration: none; }
+    html body a:hover,
+    html body a :focus {
+      text-decoration: underline; }
   html body label {
     font-size: calc(14px + (16 - 14) * (100vw - 768px) / (1800 - 768)); }
   html body h1 {
@@ -72,6 +78,10 @@ html body {
     html body a.button :focus {
       filter: grayscale(50%);
       transition: filter 100ms ease-in; }
+    html body a.button span {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
   html body .icon {
     display: inline-block;
     width: 25px;
@@ -94,18 +104,22 @@ html body {
     html body .main .work-menu {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-around; }
+      html body .main .work-menu li {
+        margin: 0.8rem 1rem; }
 
 .main .portfolio-img img {
   width: 100%;
   vertical-align: middle; }
 
 footer {
+  background: var(--background-menu);
   margin-top: 2rem; }
 
 .main-container {
   display: grid;
-  grid-template: "header header header hero hero hero" 50vh ". . intro intro . ." auto ". main main main main ." auto ". . contact contact . ." auto "footer footer footer footer footer footer" 4em/7% 13% 34% 26% 13% 7%;
+  grid-template: "header header header hero hero hero" 40vh ". . intro intro . ." auto ". main main main main ." auto ". . contact contact . ." auto "footer footer footer footer footer footer" 4em/7% 13% 34% 26% 13% 7%;
   grid-row-gap: 1rem; }
   @media only screen and (max-width: 768px) {
     .main-container {
@@ -173,6 +187,10 @@ footer {
     height: auto;
     place-self: center;
     margin-top: auto; }
+    @media only screen and (max-width: 768px) {
+      #intro img {
+        max-width: 60%;
+        padding: 0 15%; } }
     @media only screen and (max-width: 576px) {
       #intro img {
         display: none; } }
@@ -201,12 +219,12 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-gap: 15px; }
+    grid-gap: 0.625rem; }
     @media only screen and (max-width: 768px) {
       .main .portfolio {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        grid-gap: 8px; } }
+        grid-gap: 0.5rem; } }
     @media only screen and (max-width: 576px) {
       .main .portfolio {
         display: flex;
@@ -269,16 +287,11 @@ footer {
       width: 100%; }
       .contact form input::placeholder {
         color: #062733; }
-        .contact form input::placeholder:after {
-          content: 'hi'; }
-    .contact form input[type="email"]::placeholder {
-      color: red; }
-      .contact form input[type="email"]::placeholder::after {
-        content: 'hi'; }
 
 footer {
   grid-area: footer;
-  background-color: lightblue;
+  background: var(--background-menu);
+  margin-top: 2rem;
   padding-top: 8%; }
 
 header.reboot {

@@ -38,6 +38,16 @@ html {
       */
     }
 
+    a {
+      color: $font-color-primary;
+      text-decoration: none;
+
+      &:hover,
+      :focus {
+        text-decoration: underline;
+      }
+    }
+
     label {
       font-size: calc(14px + (16 - 14) * (100vw - 768px) / (1800 - 768));
     }
@@ -86,6 +96,11 @@ html {
         transition: filter 100ms ease-in;
       }
 
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     .icon {
@@ -128,7 +143,12 @@ html {
       .work-menu {
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
+
+        li {
+          margin: 0.8rem 1rem;
+        }
       }
     }
   }
@@ -151,12 +171,20 @@ html {
       width: 100%;
       vertical-align: middle;
     }
+
+    // &.large {
+    //   img {
+    //     width: calc(100% - 5px);
+    //   }
   }
 }
+
+// }
 
 // ============ Style CONTACT ============
 
 // ============ Style FOOTER ============
 footer {
+  background: var(--background-menu);
   margin-top: 2rem;
 }
