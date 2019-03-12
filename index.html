@@ -18,100 +18,111 @@
 </head>
 
 <body>
-  <div class="main-container">
-    <div class="header">
-      <header class="reboot">
-        <div><a href="#"><img class="logo" src="assets/icons/SVG/sunglasses.svg"></a></div>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <nav>
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Notes</a></li>
-          </ul>
-        </nav>
-        <label for="nav-toggle" class="nav-toggle-label">
-          <span></span>
-        </label>
-      </header>
-      <div class="header-title">
-        <div>
-          <h1>Olesia</h1>
-          <p>Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like reada</p>
-        </div>
-      </div><!-- end .header-title-->
-    </div>
-    <div class="hero">
-      <div class="hero-navbar">
-        <a href="#"><img class="logo" src="assets/icons/octocat-logo.svg"></a>
-        <a href="#"><img class="logo" src="assets/icons/linkedin.svg"></a>
-      </div>
-      <div class="striped bg-striped"></div>
-    </div><!-- end .hero -->
+  <div class="background-main">
 
-    <div id="intro">
-      <div>
-        <p>
-          <p>Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        </p>
+    <div class="parallax-layer layer-0" data-type="background" data-speed="2"></div>
+    <div class="parallax-layer layer-1" data-type="background" data-speed="3"></div>
+    <div class="parallax-layer layer-2" data-type="background" data-speed="3"></div>
+    <div class="parallax-layer layer-3" data-type="background" data-speed="4"></div>
+
+    <div class="main-container">
+      <div class="header">
+        <header class="reboot">
+          <div><a href="#"><img class="logo" src="assets/icons/SVG/sunglasses.svg"></a></div>
+          <input type="checkbox" id="nav-toggle" class="nav-toggle">
+          <nav>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Work</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Notes</a></li>
+            </ul>
+          </nav>
+          <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+          </label>
+        </header>
+        <div class="header-title">
+          <div>
+            <h1>Olesia</h1>
+            <p>Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like reada</p>
+          </div>
+        </div><!-- end .header-title-->
       </div>
-      <img src="assets/photos/portrait_min.png">
-      <div id="hero-stripes" class="striped"></div>
-    </div><!-- end #intro -->
-    <div class="main">
-      <div class="main-title">
-        <h2>Work</h2>
-        <ul class="work-menu">
-          <li><a href="">show all</a></li>
-          <li><a href="">web development</a></li>
-          <li><a href="">digital graphic</a></li>
-          <li><a href="">some printing</a></li>
-        </ul>
+      <div class="hero">
+        <div class="hero-navbar">
+          <a href="#"><img class="logo" src="assets/icons/octocat-logo.svg"></a>
+          <a href="#"><img class="logo" src="assets/icons/linkedin.svg"></a>
+        </div>
+        <div class="striped bg-striped"></div>
+        <div class="parallax-layer layer-1"></div>
+      </div><!-- end .hero -->
+
+      <div id="intro">
+        <div>
+          <p>
+            <p>Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          </p>
+        </div>
+        <img src="assets/photos/portrait_min.png">
+        <div id="hero-stripes" class="striped"></div>
+      </div><!-- end #intro -->
+      <div class="main">
+        <div class="main-title">
+          <h2>Work</h2>
+          <ul class="work-menu">
+            <li><a href="">show all</a></li>
+            <li><a href="">web development</a></li>
+            <li><a href="">digital graphic</a></li>
+            <li><a href="">some printing</a></li>
+          </ul>
+        </div>
+        <div class="portfolio">
+          <div class="portfolio-img small">
+            <img src="assets/photos/600x400.png">
+          </div>
+          <div class="portfolio-img small">
+            <img src="assets/photos/600x400.png">
+          </div>
+          <div class="portfolio-img small">
+            <img src="assets/photos/600x400.png">
+          </div>
+          <div class="portfolio-img large">
+            <img src="assets/photos/600x400.png">
+          </div>
+          <div class="portfolio-img small">
+            <img class="img-right" src="assets/photos/600x400.png">
+          </div>
+          <div class="portfolio-img small">
+            <img class="img-right" src="assets/photos/600x400.png">
+          </div>
+        </div>
+        <div><a href="#portfolio.html" class="button button-primary"><span>view more</span></a></div>
       </div>
-      <div class="portfolio">
-        <div class="portfolio-img small">
-          <img src="assets/photos/600x400.png">
-        </div>
-        <div class="portfolio-img small">
-          <img src="assets/photos/600x400.png">
-        </div>
-        <div class="portfolio-img small">
-          <img src="assets/photos/600x400.png">
-        </div>
-        <div class="portfolio-img large">
-          <img src="assets/photos/600x400.png">
-        </div>
-        <div class="portfolio-img small">
-          <img class="img-right" src="assets/photos/600x400.png">
-        </div>
-        <div class="portfolio-img small">
-          <img class="img-right" src="assets/photos/600x400.png">
-        </div>
+
+      <div class="contact">
+        <form>
+          <div>
+            <input type="text">
+            <label for="name">your name</label>
+          </div>
+          <div>
+            <input type="email">
+            <label id="email" for="email">your email</label>
+          </div>
+          <div>
+            <input type="text">
+            <label for="message">your message</label>
+          </div>
+          <div>
+            <a href="#send" class="button button-secondary"><span>send<img class="icon" src="assets/icons/SVG/paper-plane.svg"></span></a>
+          </div>
+        </form>
+
       </div>
-      <div><a href="#portfolio.html" class="button button-primary"><span>view more</span></a></div>
+      <footer>
+      </footer>
     </div>
-    <div class="contact">
-      <form>
-        <div>
-          <input type="text">
-          <label for="name">your name</label>
-        </div>
-        <div>
-          <input type="email">
-          <label id="email" for="email">your email</label>
-        </div>
-        <div>
-          <input type="text">
-          <label for="message">your message</label>
-        </div>
-        <div>
-          <a href="#send" class="button button-secondary"><span>send<img class="icon" src="assets/icons/SVG/paper-plane.svg"></span></a>
-        </div>
-      </form>
-    </div>
-    <footer>
-    </footer>
   </div>
 
   <!-- Optional JavaScript -->

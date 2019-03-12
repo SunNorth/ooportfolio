@@ -97,7 +97,7 @@ html body {
       margin-top: 1.125rem;
       margin-bottom: 1.125rem; }
   html body .bg-striped {
-    background: linear-gradient(to bottom, #314e59, #314e59 50%, white 50%, white);
+    background: linear-gradient(to bottom, #314e59, #314e59 50%, transparent 50%, transparent);
     background-size: 100% 20px; }
   html body .main {
     text-align: center; }
@@ -109,6 +109,30 @@ html body {
       html body .main .work-menu li {
         margin: 0.8rem 1rem; }
 
+.background-main {
+  position: relative; }
+  .background-main .parallax-layer {
+    width: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    z-index: -100; }
+  .background-main .layer-0 {
+    background: url("../../assets/SVG/bg-parallax-1.svg") no-repeat;
+    background-position: left -400px top 100px;
+    height: 690px; }
+  .background-main .layer-1 {
+    background: url("../../assets/SVG/bg-parallax-2.svg") no-repeat;
+    background-position: right -256px top 380px;
+    height: 1000px; }
+  .background-main .layer-2 {
+    background: url("../../assets/SVG/bg-parallax-3.svg") no-repeat;
+    background-position: left -400px bottom 100px;
+    height: 1860px; }
+  .background-main .layer-3 {
+    background: url("../../assets/SVG/bg-parallax-4.svg") no-repeat;
+    background-position: right -300px bottom 60px;
+    height: 2100px; }
+
 .main .portfolio-img img {
   width: 100%;
   vertical-align: middle; }
@@ -118,6 +142,7 @@ footer {
   margin-top: 2rem; }
 
 .main-container {
+  position: absolute;
   display: grid;
   grid-template: "header header header hero hero hero" 40vh ". . intro intro . ." auto ". main main main main ." auto ". . contact contact . ." auto "footer footer footer footer footer footer" 4em/7% 13% 34% 26% 13% 7%;
   grid-row-gap: 1rem; }
@@ -132,12 +157,11 @@ footer {
     display: flex;
     flex-flow: column; }
     .main-container .header .header-title {
-      background: white;
       height: 100%;
       position: relative; }
       @media only screen and (max-width: 576px) {
         .main-container .header .header-title {
-          background: linear-gradient(to top, #314e59, #314e59 50%, white 50%, white);
+          background: linear-gradient(to top, #314e59, #314e59 50%, transparent 50%, transparent);
           background-size: 100% 15px; } }
       .main-container .header .header-title > div {
         position: absolute;
@@ -159,11 +183,10 @@ footer {
     .hero {
       display: none; } }
   .hero .hero-navbar {
-    grid-area: subnavbar;
-    background-color: white; }
+    grid-area: subnavbar; }
   .hero .striped {
     grid-area: stripes;
-    background: linear-gradient(to bottom, #314e59, #314e59 50%, white 50%, white);
+    background: linear-gradient(to bottom, #314e59, #314e59 50%, transparent 50%, transparent);
     background-size: 100% 20px; }
 
 #intro {
@@ -196,7 +219,7 @@ footer {
         display: none; } }
   #intro #hero-stripes {
     grid-column-start: 2;
-    background: linear-gradient(to bottom, #314e59, #314e59 50%, white 50%, white);
+    background: linear-gradient(to bottom, #314e59, #314e59 50%, transparent 50%, transparent);
     background-size: 100% 20px; }
     @media only screen and (max-width: 576px) {
       #intro #hero-stripes {

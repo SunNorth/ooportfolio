@@ -131,8 +131,8 @@ html {
       background: linear-gradient(to bottom,
         $light-graphite,
         $light-graphite 50%,
-        $white 50%,
-        $white);
+        transparent 50%,
+        transparent);
       background-size: 100% 20px;
     }
 
@@ -154,7 +154,44 @@ html {
   }
 }
 
-// ============ Style HEADER =================
+// ============ Style PARALLAX =================
+
+.background-main {
+  position: relative;
+
+  .parallax-layer {
+    width: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    z-index: -100;
+  }
+
+  .layer-0 {
+    background: url("../../assets/SVG/bg-parallax-1.svg") no-repeat;
+    background-position: left -400px top 100px;
+    height: 690px;
+  }
+
+  .layer-1 {
+    background: url("../../assets/SVG/bg-parallax-2.svg") no-repeat;
+    background-position: right -256px top 380px;
+    height: 1000px;
+  }
+
+  .layer-2 {
+    background: url("../../assets/SVG/bg-parallax-3.svg") no-repeat;
+    background-position: left -400px bottom 100px;
+    height: 1860px;
+  }
+
+  .layer-3 {
+    background: url("../../assets/SVG/bg-parallax-4.svg") no-repeat;
+    background-position: right -300px bottom 60px;
+    height: 2100px;
+  }
+}
+
+
 
 // ============ Style Hero section ============
 

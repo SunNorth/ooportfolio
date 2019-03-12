@@ -1,4 +1,5 @@
 .main-container {
+  position: absolute;
   display: grid;
   // grid-template-rows: 50vh auto auto auto 4em;
   // // grid-template-columns: 2fr 3fr 8fr 6fr 3fr 2fr;
@@ -27,7 +28,7 @@
     flex-flow: column;
 
     .header-title {
-      background: $white;
+      // background: $white;
       height: 100%;
       position: relative;
 
@@ -35,8 +36,8 @@
         background: linear-gradient(to top,
           $light-graphite,
           $light-graphite 50%,
-          $white 50%,
-          $white);
+          transparent 50%,
+          transparent);
         background-size: 100% 15px;
       }
 
@@ -74,7 +75,7 @@
 
   .hero-navbar {
     grid-area: subnavbar;
-    background-color: $white;
+    // background-color: $white;
 
 
   }
@@ -84,8 +85,8 @@
     background: linear-gradient(to bottom,
       $light-graphite,
       $light-graphite 50%,
-      $white 50%,
-      $white);
+      transparent 50%,
+      transparent);
     background-size: 100% 20px;
   }
 }
@@ -131,8 +132,8 @@
     background: linear-gradient(to bottom,
       $light-graphite,
       $light-graphite 50%,
-      $white 50%,
-      $white);
+      transparent 50%,
+      transparent);
     background-size: 100% 20px;
 
     @include mq(576px) {
