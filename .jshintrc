@@ -1,0 +1,29 @@
+{
+  "node": true,
+  "undef": true,
+  "unused": true,
+  "asi": true,
+  "globals": {
+      "parent": true,
+  	  "Promise": true,
+      "document": true,
+      "window": true,
+      "localStorage": true,
+      "fetch": true,
+      "Headers": true,
+      "$": true,
+      "FormData": true,
+      "FileReader": true,
+      "XMLHttpRequest": true,
+      "Image": true,
+      "Stripe": true,
+      "Request": true,
+      "google": true,
+      "atob": true,
+      "Blob": true,
+      "AWS": true,
+      "Audio": true
+  },
+  "esversion": 6,
+  "mocha": true
+}
