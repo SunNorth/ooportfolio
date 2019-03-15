@@ -98,6 +98,10 @@
   grid-template-rows: 8fr 2fr;
   padding-top: $padding-divide;
 
+  p {
+    color: $blue;
+  }
+
   &>div:first-of-type {
     align-self: center;
     margin: 2.5rem;

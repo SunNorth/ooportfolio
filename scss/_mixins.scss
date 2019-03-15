@@ -5,9 +5,13 @@
   text-transform: uppercase;
 }
 
+@mixin font-responsive($font-size-resp) {
+  font-size: calc(#{$font-size-resp}px + (36 - #{$font-size-resp}) * (100vw - 768px) / (1800 - 768));
+
+}
+
 @mixin mq($width) {
   @media only screen and (max-width: $width) {
     @content;
   }
 }
-

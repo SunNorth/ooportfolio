@@ -107,21 +107,21 @@ $(window).on('resize', function () {
 
 // =======================
 
-// var background_image_parallax = function ($object, multiplier) {
-//   multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.8;
-//   multiplier = 1 - multiplier;
-//   var $doc = $(document);
-//   $object.css({
-//     "position": "fixed"
-//   });
-//   $(window).scroll(function () {
-//     var from_top = $doc.scrollTop(),
-//       bg_css = '0px ' + (multiplier * from_top) + 'px';
-//     $object.css({
-//       "background-position": bg_css
-//     });
-//   });
-// };
+var background_image_parallax = function ($object, multiplier) {
+  multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.8;
+  multiplier = 1 - multiplier;
+  var $doc = $(document);
+  $object.css({
+    "position": "fixed"
+  });
+  $(window).scroll(function () {
+    var from_top = $doc.scrollTop() + 50,
+      bg_position = '100px ' + (multiplier * from_top) + 'px';
+    $object.css({
+      "background-position": bg_position
+    });
+  });
+};
 
 
 //optional second value for speed

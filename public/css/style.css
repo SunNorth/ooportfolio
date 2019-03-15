@@ -18,8 +18,7 @@ After there is Custom
 
 html * {
   margin: 0;
-  padding: 0;
-  font-size: 2vw; }
+  padding: 0; }
 
 html body {
   font-family: "Roboto", sans-serif;
@@ -27,7 +26,7 @@ html body {
   font-size: 16px;
   font-weight: 200; }
   html body .logo {
-    height: 25px;
+    height: 22px;
     width: auto;
     margin: 1rem 2rem; }
   html body p,
@@ -46,15 +45,15 @@ html body {
     html body a :focus {
       text-decoration: underline; }
   html body label {
-    font-size: calc(14px + (16 - 14) * (100vw - 768px) / (1800 - 768)); }
+    font-size: calc(14px + (36 - 14) * (100vw - 768px) / (1800 - 768)); }
   html body h1 {
     font-size: 2.3em;
     font-size: calc(30px + (36 - 30) * (100vw - 768px) / (1800 - 768)); }
   html body h2 {
     font-size: 2em;
-    font-size: calc(26px + (32 - 26) * (100vw - 768px) / (1800 - 768));
     text-align: center;
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    font-size: calc(26px + (36 - 26) * (100vw - 768px) / (1800 - 768)); }
     @media only screen and (max-width: 768px) {
       html body h2 {
         font-size: 1.6rem; } }
@@ -195,6 +194,8 @@ footer {
   grid-template-columns: 2fr 2fr;
   grid-template-rows: 8fr 2fr;
   padding-top: 8%; }
+  #intro p {
+    color: #5B819C; }
   #intro > div:first-of-type {
     align-self: center;
     margin: 2.5rem;
