@@ -1,4 +1,4 @@
 bin/
-assets/photos
+# assets/photos
 node_modules
 notes.md

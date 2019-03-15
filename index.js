@@ -123,6 +123,36 @@ var background_image_parallax = function ($object, multiplier) {
   });
 };
 
+// const $ = () => {};
+
+// const key = "key-with-dashes";
+
+// const o = {
+//   [key]: "value"
+// };
+
+// const backgroundImageParallax = ({
+//   $object,
+//   xOffset = 0,
+//   yOffset = 0,
+//   multiplier = 0.8
+// }) => {
+//   multiplier = 1 - multiplier;
+//   const $doc = $(document);
+//   $object.css({
+//     position: "fixed"
+//   });
+//   $(window).scroll(() => {
+//     const from_top = $doc.scrollTop() + yOffset;
+//     const totalOffsetFromTop = from_top * multiplier;
+//     const bg_position = `${xOffset}px ${totalOffsetFromTop}px`;
+//     $object.css({
+//       "background-position": bg_position
+//     });
+//   });
+// };
+
+
 
 //optional second value for speed
 background_image_parallax($(".parallax-layer"), 0.25);
