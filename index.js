@@ -107,21 +107,21 @@ $(window).on('resize', function () {
 
 // =======================
 
-var background_image_parallax = function ($object, multiplier) {
-  multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.8;
-  multiplier = 1 - multiplier;
-  var $doc = $(document);
-  $object.css({
-    "position": "fixed"
-  });
-  $(window).scroll(function () {
-    var from_top = $doc.scrollTop() + 50,
-      bg_position = '100px ' + (multiplier * from_top) + 'px';
-    $object.css({
-      "background-position": bg_position
-    });
-  });
-};
+// var background_image_parallax = function ($object, multiplier) {
+//   multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.8;
+//   multiplier = 1 - multiplier;
+//   var $doc = $(document);
+//   $object.css({
+//     "position": "fixed"
+//   });
+//   $(window).scroll(function () {
+//     var from_top = $doc.scrollTop() + 50,
+//       bg_position = '100px ' + (multiplier * from_top) + 'px';
+//     $object.css({
+//       "background-position": bg_position
+//     });
+//   });
+// };
 
 // const $ = () => {};
 
@@ -155,43 +155,40 @@ var background_image_parallax = function ($object, multiplier) {
 
 
 //optional second value for speed
-background_image_parallax($(".parallax-layer"), 0.25);
+// background_image_parallax($(".parallax-layer"), 0.25);
 
 
-const backgroundImageParallax = ({
-  $object,
-  xOffset = 0,
-  yOffset = 0,
-  multiplier = 0.8
+// const backgroundImageParallax = ({
+//   $object,
+//   xOffset = 0,
+//   yOffset = 0,
+//   multiplier = 0.8
 
-}) => {
+// }) => {
 
-  const adjustedMultiplier = 1 - multiplier;
+//   const adjustedMultiplier = 1 - multiplier;
 
-  const $doc = $(document);
+//   const $doc = $(document);
 
-  $object.css({
-      position: "fixed"
-  });
+//   $object.css({
+//     position: "fixed"
+//   });
 
-  $(window).scroll(() => {
+//   $(window).scroll(() => {
 
-    const from_top = $doc.scrollTop() + yOffset;
+//     const from_top = $doc.scrollTop() + yOffset;
 
-    const totalOffsetFromTop = from_top * adjustedMultiplier;
+//     const totalOffsetFromTop = from_top * adjustedMultiplier;
 
-    const bg_position = `${xOffset}px ${totalOffsetFromTop}px`;
+//     const bg_position = `${xOffset}px ${totalOffsetFromTop}px`;
 
-      $object.css({
-  
-          "background-position": bg_position
-      });
-  });
-};
+//     $object.css({
 
+//       "background-position": bg_position
+//     });
+//   });
+// };
 
-backgroundImageParallax({
+// backgroundImageParallax({
 
-
-  
-})
+// })
