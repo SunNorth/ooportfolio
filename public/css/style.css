@@ -16,97 +16,98 @@ After there is Custom
 :root {
   --background-menu: rgba(49, 78, 89, 1); }
 
-html * {
-  margin: 0;
-  padding: 0; }
-
-html body {
-  font-family: "Roboto", sans-serif;
-  color: #062733;
-  font-size: 16px;
-  font-weight: 200; }
-  html body .logo {
-    height: 22px;
-    width: auto;
-    margin: 1rem 2rem; }
-  html body p,
-  html body a,
-  html body span {
-    font-size: calc(16px + (18 - 16) * (100vw - 768px) / (1800 - 768));
-    /* where 16px = min font-size,
+html {
+  scroll-behavior: smooth; }
+  html * {
+    margin: 0;
+    padding: 0; }
+  html body {
+    font-family: "Roboto", sans-serif;
+    color: #062733;
+    font-size: 16px;
+    font-weight: 200; }
+    html body .logo {
+      height: 22px;
+      width: auto;
+      margin: 1rem 2rem; }
+    html body p,
+    html body a,
+    html body span {
+      font-size: calc(16px + (18 - 16) * (100vw - 768px) / (1800 - 768));
+      /* where 16px = min font-size,
        24-16 = max font size - min font size,
        400px = min screen size,
        800 - 400 = max screen size - min screen size;
       */ }
-  html body a {
-    color: #062733;
-    text-decoration: none; }
-    html body a:hover,
-    html body a :focus {
-      text-decoration: underline; }
-  html body label {
-    font-size: calc(14px + (36 - 14) * (100vw - 768px) / (1800 - 768)); }
-  html body h1 {
-    font-size: 2.3em;
-    font-size: calc(30px + (36 - 30) * (100vw - 768px) / (1800 - 768)); }
-  html body h2 {
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: calc(26px + (36 - 26) * (100vw - 768px) / (1800 - 768)); }
-    @media only screen and (max-width: 768px) {
-      html body h2 {
-        font-size: 1.6rem; } }
-  html body a.button {
-    padding: .8rem 2rem;
-    width: 9.375rem;
-    margin-top: 2rem;
-    text-align: center;
-    display: inline-block;
-    text-decoration: none;
-    color: #062733;
-    border-radius: 2.25rem;
-    font-weight: inherit; }
-    html body a.button.button-primary {
-      background-color: #5B819C;
-      color: white; }
-    html body a.button.button-secondary {
-      background-color: #169AA0;
-      color: white; }
-    html body a.button:hover,
-    html body a.button :focus {
-      filter: grayscale(50%);
-      transition: filter 100ms ease-in; }
-    html body a.button span {
+    html body a {
+      color: #062733;
+      text-decoration: none; }
+      html body a:hover,
+      html body a :focus {
+        text-decoration: underline; }
+    html body label {
+      font-size: calc(14px + (36 - 14) * (100vw - 768px) / (1800 - 768)); }
+    html body h1 {
+      font-size: 2.3em;
+      font-size: calc(30px + (36 - 30) * (100vw - 768px) / (1800 - 768)); }
+    html body h2 {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: calc(26px + (36 - 26) * (100vw - 768px) / (1800 - 768)); }
+      @media only screen and (max-width: 768px) {
+        html body h2 {
+          font-size: 1.6rem; } }
+    html body a.button {
+      padding: .8rem 2rem;
+      width: 9.375rem;
+      margin-top: 2rem;
+      text-align: center;
+      display: inline-block;
+      text-decoration: none;
+      color: #062733;
+      border-radius: 2.25rem;
+      font-weight: inherit; }
+      html body a.button.button-primary {
+        background-color: #5B819C;
+        color: white; }
+      html body a.button.button-secondary {
+        background-color: #169AA0;
+        color: white; }
+      html body a.button:hover,
+      html body a.button :focus {
+        filter: grayscale(50%);
+        transition: filter 100ms ease-in; }
+      html body a.button span {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+    html body .icon {
+      display: inline-block;
+      width: 25px;
+      height: auto;
+      margin-left: .3rem; }
+    html body .hero-navbar {
       display: flex;
-      align-items: center;
-      justify-content: center; }
-  html body .icon {
-    display: inline-block;
-    width: 25px;
-    height: auto;
-    margin-left: .3rem; }
-  html body .hero-navbar {
-    display: flex;
-    justify-content: flex-end; }
-    html body .hero-navbar a img {
-      height: 21px;
-      width: auto;
-      margin-left: 0;
-      margin-top: 1.125rem;
-      margin-bottom: 1.125rem; }
-  html body .bg-striped {
-    background: linear-gradient(to bottom, #314e59, #314e59 50%, transparent 50%, transparent);
-    background-size: 100% 20px; }
-  html body .main {
-    text-align: center; }
-    html body .main .work-menu {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around; }
-      html body .main .work-menu li {
-        margin: 0.8rem 1rem; }
+      justify-content: flex-end; }
+      html body .hero-navbar a img {
+        height: 21px;
+        width: auto;
+        margin-left: 0;
+        margin-top: 1.125rem;
+        margin-bottom: 1.125rem; }
+    html body .bg-striped {
+      background: linear-gradient(to bottom, #314e59, #314e59 50%, transparent 50%, transparent);
+      background-size: 100% 20px; }
+    html body .main {
+      text-align: center; }
+      html body .main .work-menu {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; }
+        html body .main .work-menu li {
+          margin: 0.8rem 1rem; }
 
 .background-main {
   position: relative; }

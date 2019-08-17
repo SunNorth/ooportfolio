@@ -1,15 +1,4 @@
-// Look for .hamburger
-// var hamburger = document.querySelector(".hamburger");
-// // On click
-// hamburger.addEventListener("click", function () {
-//   // Toggle class "is-active"
-//   hamburger.classList.toggle("is-active");
-//   // Do something else, like open/close menu
-// });
-
-
-// change class .large to .small for div class=portfolio-img [4]
-
+// // change class .large to .small for div class=portfolio-img [4]
 $(window).on('resize', function () {
   if ($(window).width() < 768) {
     $('.portfolio-img').removeClass('large').addClass('small');
@@ -18,177 +7,75 @@ $(window).on('resize', function () {
   }
 });
 
+// -------- make divs as links --------
 
-// Parallax effect
+$(".portfolio-img").css('cursor', 'pointer').click(function () {
+  window.location = $(this).find("a").attr("href");
+  return false;
+});
 
-// var ParallaxManager, ParallaxPart;
+// ============ menu - filter ===========
 
-// ParallaxPart = (function () {
-//   function ParallaxPart(el) {
-//     this.el = el;
-//     this.speed = parseFloat(this.el.getAttribute('data-parallax-speed'));
-//     this.maxScroll = parseInt(this.el.getAttribute('data-max-scroll'));
-//   }
+$(document).ready(function () {
 
-//   ParallaxPart.prototype.update = function (scrollY) {
-//     if (scrollY > this.maxScroll) {
-//       return;
-//     }
-//     var offset = -(scrollY * this.speed);
-//     this.setYTransform(offset);
-//   };
+  $('#webdev').click(function (webdev) {
+    webdev.preventDefault();
+    $('.portfolio-img').hide();
+    $('.webdev').show(1000);
+  });
+  $('#digitgraph').click(function (digitgraph) {
+    $('.portfolio-img').hide();
+    digitgraph.preventDefault();
+    $('.digitgraph').show(1000);
+  });
+  $('#prints').click(function (prints) {
+    $('.portfolio-img').hide();
+    prints.preventDefault();
+    $('.prints').show(1000);
+  });
+  $('#showall').click(function (showall) {
+    showall.preventDefault();
+    $('.portfolio-img').show(1000);
+  });
+});
 
-//   ParallaxPart.prototype.setYTransform = function (val) {
-//     this.el.style.webkitTransform = "translate3d(0, " + val + "px, 0)";
-//     this.el.style.MozTransform = "translate3d(0, " + val + "px, 0)";
-//     this.el.style.OTransform = "translate3d(0, " + val + "px, 0)";
-//     this.el.style.transform = "translate3d(0, " + val + "px, 0)";
-//     this.el.style.msTransform = "translateY(" + val + "px)";
-//   };
+// click on <li> and choose all the same classes
+// только для экранов больше либо равно 768
+// remove class small and add добавить класс .large 4-му элементу [3] если элментов в списке более 5 length >= 5
+//
 
-//   return ParallaxPart;
-// })();
+// ------- function check class and id --------
 
-// ParallaxManager = (function () {
-//   ParallaxManager.prototype.parts = [];
+// var groups = ['webdev', 'digitgraph', 'prints'];
+// for (var i = 0; i < groups.length; i++) {
+//   // console.log(idEl);
+//   alert(groups[i]);
+//   var idEl = '#' + groups[i];
+//   var classEl = '.' + groups[i];
+//   $(idEl).click(function e() {
+//     e.preventDefault();
+//     $('.portfolio-img').hide();
+//     $(classEl).show();
+//   })
+// }
 
-//   function ParallaxManager(elements) {
-//     if (Array.isArray(elements) && elements.item) {
-//       this.elements = Array.prototype.slice.call(elements);
-//     } else if (typeof elements === 'string') {
-//       this.elements = document.querySelectorAll(elements);
-//       if (this.elements.length === 0) {
-//         throw new Error('Parallax: No elements found');
-//       }
-//       this.elements = Array.prototype.slice.call(this.elements);
-//     } else {
-//       throw new Error('Parallax: Element variable is not a querySelector string, Array, or NodeList');
-//     }
-//     for (var i in this.elements) {
-//       this.parts.push(new ParallaxPart(this.elements[i]));
-//     }
-//     window.addEventListener('scroll', this.onScroll.bind(this));
-//   }
-//   ParallaxManager.prototype.onScroll = function () {
-//     var scrollY = Math.max(window.pageXOffset, 0);
-//     for (var i in this.parts) {
-//       this.parts[i].update(scrollY);
-//     }
-//   };
 
-//   return ParallaxManager;
-// })();
-
-// new ParallaxManager('.parallax-layer');
-
-// window.addEventListener('scroll', () => {
-//   let parent = document.querySelector('.background-main');
-//   let children = parent.querySelectorAll('.parallax-layer');
-//   for (let i = 0; i < children.length; i++) {
-//     children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
-//   }
-// }, false);
-
-// $(document).ready(function () {
-//   $('section[data-type="background"]').each(function () {
-//     var $bgobj = $(this);
-//     $(window).scroll(function () {
-//       var yPos = -($window.scrollTop() / $bgobj.data('speed'));
-
-//       var coords = '50% ' + yPos + 'px';
-
-//       $bgobj.css({
-//         backgroundPosition: cords
-//       });
-//     });
-//   });
+// $('#webdev').click(function (filter) {
+//   filter.preventDefault();
+//   $('.portfolio-img').hide();
+//   $('.webdev').show();
 // });
-
-
-// =======================
-
-// var background_image_parallax = function ($object, multiplier) {
-//   multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.8;
-//   multiplier = 1 - multiplier;
-//   var $doc = $(document);
-//   $object.css({
-//     "position": "fixed"
-//   });
-//   $(window).scroll(function () {
-//     var from_top = $doc.scrollTop() + 50,
-//       bg_position = '100px ' + (multiplier * from_top) + 'px';
-//     $object.css({
-//       "background-position": bg_position
-//     });
-//   });
-// };
-
-// const $ = () => {};
-
-// const key = "key-with-dashes";
-
-// const o = {
-//   [key]: "value"
-// };
-
-// const backgroundImageParallax = ({
-//   $object,
-//   xOffset = 0,
-//   yOffset = 0,
-//   multiplier = 0.8
-// }) => {
-//   multiplier = 1 - multiplier;
-//   const $doc = $(document);
-//   $object.css({
-//     position: "fixed"
-//   });
-//   $(window).scroll(() => {
-//     const from_top = $doc.scrollTop() + yOffset;
-//     const totalOffsetFromTop = from_top * multiplier;
-//     const bg_position = `${xOffset}px ${totalOffsetFromTop}px`;
-//     $object.css({
-//       "background-position": bg_position
-//     });
-//   });
-// };
-
-
-
-//optional second value for speed
-// background_image_parallax($(".parallax-layer"), 0.25);
-
-
-// const backgroundImageParallax = ({
-//   $object,
-//   xOffset = 0,
-//   yOffset = 0,
-//   multiplier = 0.8
-
-// }) => {
-
-//   const adjustedMultiplier = 1 - multiplier;
-
-//   const $doc = $(document);
-
-//   $object.css({
-//     position: "fixed"
-//   });
-
-//   $(window).scroll(() => {
-
-//     const from_top = $doc.scrollTop() + yOffset;
-
-//     const totalOffsetFromTop = from_top * adjustedMultiplier;
-
-//     const bg_position = `${xOffset}px ${totalOffsetFromTop}px`;
-
-//     $object.css({
-
-//       "background-position": bg_position
-//     });
-//   });
-// };
-
-// backgroundImageParallax({
-
-// })
+// $('#digitgraph').click(function (filter) {
+//   filter.preventDefault();
+//   $('.portfolio-img').hide();
+//   $('.digitgraph').show();
+// });
+// $('#prints').click(function (filter) {
+//   filter.preventDefault();
+//   $('.portfolio-img').hide();
+//   $('.prints').show();
+// });
+// $('#showall').click(function (filter2) {
+//   filter2.preventDefault();
+//   $('.portfolio-img').show();
+// });
