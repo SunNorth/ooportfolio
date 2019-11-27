@@ -34,10 +34,10 @@
 
       @include mq(576px) {
         background: linear-gradient(to top,
-          $light-graphite,
-          $light-graphite 50%,
-          transparent 50%,
-          transparent);
+            $light-graphite,
+            $light-graphite 50%,
+            transparent 50%,
+            transparent);
         background-size: 100% 15px;
       }
 
@@ -83,10 +83,10 @@
   .striped {
     grid-area: stripes;
     background: linear-gradient(to bottom,
-      $light-graphite,
-      $light-graphite 50%,
-      transparent 50%,
-      transparent);
+        $light-graphite,
+        $light-graphite 50%,
+        transparent 50%,
+        transparent);
     background-size: 100% 20px;
   }
 }
@@ -134,10 +134,10 @@
   #hero-stripes {
     grid-column-start: 2;
     background: linear-gradient(to bottom,
-      $light-graphite,
-      $light-graphite 50%,
-      transparent 50%,
-      transparent);
+        $light-graphite,
+        $light-graphite 50%,
+        transparent 50%,
+        transparent);
     background-size: 100% 20px;
 
     @include mq(576px) {
@@ -175,7 +175,9 @@
 
     @include mq(768px) {
       grid-template-columns: repeat(2, 1fr);
+      // grid-template-rows: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
+
       grid-gap: 0.5rem;
     }
 
@@ -191,7 +193,7 @@
       align-items: center;
 
       @include mq(576px) {
-        padding: 0.25rem 0.5rem;
+        margin: 0.25rem 0.5rem;
       }
 
 
@@ -204,6 +206,8 @@
         grid-row: span 2;
         grid-column: span 2;
       }
+
+
     }
   }
 }
